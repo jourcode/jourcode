@@ -9,7 +9,7 @@ I am building a public technical identity at the intersection of accessibility, 
 - I’m looking to collaborate on accessible security tools, inclusive cybersecurity learning, and privacy-centered projects.
 - I’m looking for help with growing into accessibility cybersecurity and building strong public technical work.
 - Ask me about accessibility, privacy, GitHub learning, security fundamentals, and building systems that people can actually use.
-- How to reach me: contact details coming soon.
+- How to reach me: contact@jourcode.com
 
 ## What I Care About
 
