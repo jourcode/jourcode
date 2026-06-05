@@ -102,7 +102,7 @@
   .lede{
     font-style:italic;font-weight:400;
     font-size:clamp(1.25rem,1rem + 1.5vw,1.95rem);
-    line-height:1.42;color:var(--ink);max-width:30ch;margin:0;
+    line-height:1.42;color:var(--ink);max-width:42ch;margin:0;
   }
 
   /* sections */
@@ -110,8 +110,8 @@
   section.ethos{padding-top:clamp(2rem,5vh,4rem);}
   .hero .lower,
   section.block{
-    width:min(100%,58rem);
-    margin-left:clamp(0rem,7vw,5rem);
+    width:min(100%,64rem);
+    margin-left:clamp(0rem,4vw,3rem);
     margin-right:auto;
   }
   .label{
@@ -136,7 +136,7 @@
   .statement{
     font-weight:400;
     font-size:clamp(1.75rem,1rem + 3.6vw,3.3rem);
-    line-height:1.18;letter-spacing:-.01em;max-width:31ch;margin:0;
+    line-height:1.18;letter-spacing:-.01em;max-width:34ch;margin:0;
   }
   .statement em{font-style:italic;color:var(--accent-deep);}
   .quote{
