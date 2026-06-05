@@ -1,11 +1,10 @@
 # jourcode
 
-Public technical space for accessibility, cybersecurity, privacy, and secure design practice.
+Public technical space for accessibility and cybersecurity practice.
 
 ## Focus
 
 - Accessibility as a security baseline.
-- Privacy-aware public work.
 - Cybersecurity foundations, ethical hacking practice, and safer technical learning.
 - Tools and writing that make complex systems easier to use.
 
