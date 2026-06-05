@@ -1,200 +1,16 @@
-<!doctype html>
-<html lang="en" class="no-js">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>jourcode</title>
 <meta name="description" content="A public technical identity at the intersection of accessibility, cybersecurity, and privacy.">
-<script>document.documentElement.className = "js";</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --paper:#000;
-    --paper-2:#080808;
-    --ink:#fff;
-    --ink-soft:rgba(255,255,255,.68);
-    --line:rgba(255,255,255,.16);
-    --line-2:rgba(255,255,255,.32);
-    --accent:#fff;
-    --accent-deep:rgba(255,255,255,.82);
-    --serif:"EB Garamond",Georgia,"Times New Roman",serif;
-    --mono:"Spline Sans Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
-    --pad:clamp(1.4rem,5vw,4.5rem);
-    --gap:clamp(4.5rem,11vh,9.5rem);
-  }
-
-  *{box-sizing:border-box;}
-  html{-webkit-text-size-adjust:100%;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:var(--serif);
-    font-size:clamp(1.05rem,1.05rem + .2vw,1.2rem);
-    line-height:1.62;
-    font-variant-numeric:oldstyle-nums;
-    -webkit-font-smoothing:antialiased;
-    text-rendering:optimizeLegibility;
-    overflow-x:hidden;
-  }
-
-  /* paper grain */
-  .grain{
-    position:fixed;
-    inset:0;
-    z-index:0;
-    pointer-events:none;
-    mix-blend-mode:multiply;
-    opacity:.045;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-size:200px 200px;
-  }
-
-  .wrap{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 var(--pad);}
-
-  /* skip link */
-  .skip{
-    position:absolute;left:-9999px;top:0;
-    background:var(--ink);color:var(--paper);
-    padding:.7rem 1.1rem;font-family:var(--mono);font-size:.75rem;
-    letter-spacing:.08em;text-transform:uppercase;text-decoration:none;z-index:50;
-  }
-  .skip:focus{left:1rem;top:1rem;}
-
-  a{color:var(--accent);text-decoration:underline;text-underline-offset:.18em;text-decoration-thickness:.5px;transition:color .35s ease,text-decoration-thickness .35s ease;}
-  a:hover{color:var(--accent-deep);text-decoration-thickness:1.4px;}
-
-  :focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:1px;}
-
-  /* header */
-  .masthead{
-    display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap;
-    padding-top:clamp(1.4rem,3.5vh,2.4rem);padding-bottom:1.2rem;
-    border-bottom:1px solid var(--line);
-  }
-  .mark{font-family:var(--serif);font-weight:500;font-size:1.2rem;letter-spacing:.01em;}
-  .masthead nav{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;}
-  .masthead nav a{color:var(--ink-soft);}
-  .masthead nav a:hover{color:var(--accent-deep);}
-
-  .eyebrow{
-    font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--ink-soft);
-  }
-
-  /* hero */
-  .hero{
-    min-height:84svh;
-    display:flex;flex-direction:column;
-    padding-top:clamp(2.5rem,6vh,4rem);
-    padding-bottom:clamp(3rem,7vh,5rem);
-  }
-  .hero .lower{margin-top:auto;}
-  .hero h1{
-    font-family:var(--serif);font-weight:500;
-    font-size:clamp(3.6rem,14vw,10.5rem);
-    line-height:.92;letter-spacing:-.025em;
-    margin:0 0 .35em;
-  }
-  .type-logo{position:relative;display:inline-block;min-height:.95em;}
-  .type-live{white-space:pre;}
-  .type-cursor{
-    display:inline-block;width:.055em;height:.72em;margin-left:.035em;
-    background:var(--ink);vertical-align:-.02em;animation:cursorBlink 1s steps(1,end) infinite;
-  }
-  .type-logo:not(.is-typing) .type-live,
-  .type-logo:not(.is-typing) .type-cursor{display:none;}
-  .type-logo.is-typing .type-static{
-    position:absolute;width:1px;height:1px;padding:0;overflow:hidden;
-    clip:rect(0,0,0,0);white-space:nowrap;border:0;
-  }
-  .lede{
-    font-style:italic;font-weight:400;
-    font-size:clamp(1.25rem,1rem + 1.5vw,1.95rem);
-    line-height:1.42;color:var(--ink);max-width:30ch;margin:0;
-  }
-
-  /* sections */
-  section.block{padding-top:var(--gap);}
-  .label{
-    display:flex;align-items:baseline;gap:1rem;margin-bottom:1.6rem;
-  }
-  .label .no{font-family:var(--mono);font-size:.78rem;color:var(--accent);letter-spacing:.04em;}
-  .label .nm{
-    font-family:var(--serif);font-weight:600;font-size:.84rem;
-    letter-spacing:.26em;text-transform:uppercase;color:var(--ink-soft);
-  }
-  .label::after{content:"";flex:1;height:1px;background:var(--line);align-self:center;}
-
-  .statement{
-    font-weight:400;
-    font-size:clamp(1.75rem,1rem + 3.6vw,3.3rem);
-    line-height:1.18;letter-spacing:-.01em;max-width:26ch;margin:0;
-  }
-  .statement em{font-style:italic;color:var(--accent-deep);}
-
-  /* ledger */
-  dl.ledger{margin:0;border-top:1px solid var(--line-2);}
-  dl.ledger > div{
-    display:grid;grid-template-columns:minmax(8rem,13rem) 1fr;
-    gap:1rem 2.5rem;
-    padding:1.35rem 0;border-bottom:1px solid var(--line);
-  }
-  dl.ledger dt{
-    font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--ink-soft);padding-top:.35em;
-  }
-  dl.ledger dd{margin:0;font-size:clamp(1.1rem,1rem + .4vw,1.3rem);line-height:1.45;max-width:50ch;}
-
-  .direction p{font-size:clamp(1.2rem,1rem + .9vw,1.55rem);line-height:1.5;max-width:42ch;margin:0;}
-
-  /* contact */
-  .contact .line{font-size:clamp(1.2rem,1rem + .8vw,1.5rem);color:var(--ink-soft);margin:0 0 .6rem;}
-  .contact a.mailto{
-    font-family:var(--serif);font-weight:500;
-    font-size:clamp(1.2rem,.95rem + 1.4vw,2rem);line-height:1.12;letter-spacing:-.01em;
-    text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:.06em;
-    display:inline-block;
-  }
-  .contact a.mailto:hover{border-color:var(--accent);}
-
-  /* footer */
-  footer{
-    margin-top:calc(var(--gap) * 1.15);padding:3.8rem 0 4.8rem;border-top:1px solid var(--line);
-    display:flex;justify-content:center;
-  }
-  .footer-lockup{display:flex;align-items:center;justify-content:center;gap:1rem;text-align:center;}
-  footer .mark{font-size:1.05rem;}
-  footer .colophon{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);}
-  footer .colophon a{color:var(--ink-soft);}
-
-  /* reveal */
-  .js .reveal{opacity:0;transform:translateY(14px);}
-  .reveal.in{opacity:1;transform:none;transition:opacity 1s cubic-bezier(.2,.65,.3,1),transform 1s cubic-bezier(.2,.65,.3,1);}
-  .reveal.d1{transition-delay:.12s;}
-  .reveal.d2{transition-delay:.24s;}
-  .reveal.d3{transition-delay:.36s;}
-  @keyframes cursorBlink{
-    0%,49%{opacity:1;}
-    50%,100%{opacity:0;}
-  }
-
-  @media (max-width:640px){
-    dl.ledger > div{grid-template-columns:1fr;gap:.4rem;padding:1.15rem 0;}
-    dl.ledger dt{padding-top:0;}
-    .hero{min-height:80svh;}
-  }
-
-  @media (prefers-reduced-motion:reduce){
-    .js .reveal{opacity:1;transform:none;}
-    .reveal.in{transition:none;}
-    a{transition:none;}
-    .type-cursor{animation:none;}
-    *{scroll-behavior:auto;}
-  }
-</style>
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#000000">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; upgrade-insecure-requests">
+<link rel="canonical" href="https://jourcode.com/">
+<link rel="stylesheet" href="/style.css">
+<script src="/app.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -214,12 +30,12 @@
     </section>
 
     <section class="block" aria-labelledby="ethos">
-      <div class="label reveal"><span class="no">00</span><span class="nm" id="ethos">Ethos</span></div>
+      <div class="label reveal"><span class="no">00</span><h2 class="nm" id="ethos">Ethos</h2></div>
       <p class="statement reveal d1">Security fails when people are shut out. Access, privacy, and trust belong in the same design conversation.</p>
     </section>
 
     <section class="block" aria-labelledby="practice">
-      <div class="label reveal"><span class="no">01</span><span class="nm" id="practice">Practice</span></div>
+      <div class="label reveal"><span class="no">01</span><h2 class="nm" id="practice">Practice</h2></div>
       <dl class="ledger reveal d1">
         <div><dt>Currently</dt><dd>Shaping a public home for security, access, and privacy work.</dd></div>
         <div><dt>Foundation</dt><dd>Competent in cybersecurity fundamentals, with growing focus in ethical hacking, privacy, and accessible design.</dd></div>
@@ -230,19 +46,19 @@
     </section>
 
     <section class="block direction" aria-labelledby="direction">
-      <div class="label reveal"><span class="no">02</span><span class="nm" id="direction">Direction</span></div>
+      <div class="label reveal"><span class="no">02</span><h2 class="nm" id="direction">Direction</h2></div>
       <p class="reveal d1">This is where I collect notes, experiments, and projects that show how I think, learn, and build.</p>
     </section>
 
     <section class="block contact" id="contact" aria-labelledby="contact-h">
-      <div class="label reveal"><span class="no">03</span><span class="nm" id="contact-h">Contact</span></div>
+      <div class="label reveal"><span class="no">03</span><h2 class="nm" id="contact-h">Contact</h2></div>
       <p class="line reveal d1">Open to collaboration and conversation.</p>
       <a class="mailto reveal d2" href="mailto:contact@jourcode.com">contact@jourcode.com</a>
     </section>
 
   </main>
 
-  <footer>
+  <footer aria-label="Site footer">
     <div class="footer-lockup">
       <span class="mark">jourcode</span>
       <span class="colophon">&copy; 2026</span>
@@ -250,35 +66,5 @@
   </footer>
 </div>
 
-<script>
-  (function(){
-    var logo = document.querySelector('.type-logo');
-    var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(logo && !reducedMotion){
-      var live = logo.querySelector('.type-live');
-      var text = logo.getAttribute('data-type-text') || '';
-      var index = 0;
-      logo.classList.add('is-typing');
-      live.textContent = '';
-      window.setTimeout(function typeNext(){
-        live.textContent = text.slice(0, index);
-        index += 1;
-        if(index <= text.length + 1){ window.setTimeout(typeNext, 95); }
-      }, 260);
-    }
-
-    var els = document.querySelectorAll('.reveal:not(.in)');
-    if(!('IntersectionObserver' in window)){
-      els.forEach(function(el){el.classList.add('in');});
-      return;
-    }
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    }, {rootMargin:'0px 0px -8% 0px', threshold:0.12});
-    els.forEach(function(el){io.observe(el);});
-  })();
-</script>
 </body>
 </html>
