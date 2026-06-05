@@ -98,6 +98,18 @@
     line-height:.92;letter-spacing:-.025em;
     margin:0 0 .35em;
   }
+  .type-logo{position:relative;display:inline-block;min-height:.95em;}
+  .type-live{white-space:pre;}
+  .type-cursor{
+    display:inline-block;width:.055em;height:.72em;margin-left:.035em;
+    background:var(--ink);vertical-align:-.02em;animation:cursorBlink 1s steps(1,end) infinite;
+  }
+  .type-logo:not(.is-typing) .type-live,
+  .type-logo:not(.is-typing) .type-cursor{display:none;}
+  .type-logo.is-typing .type-static{
+    position:absolute;width:1px;height:1px;padding:0;overflow:hidden;
+    clip:rect(0,0,0,0);white-space:nowrap;border:0;
+  }
   .lede{
     font-style:italic;font-weight:400;
     font-size:clamp(1.25rem,1rem + 1.5vw,1.95rem);
@@ -164,6 +176,10 @@
   .reveal.d1{transition-delay:.12s;}
   .reveal.d2{transition-delay:.24s;}
   .reveal.d3{transition-delay:.36s;}
+  @keyframes cursorBlink{
+    0%,49%{opacity:1;}
+    50%,100%{opacity:0;}
+  }
 
   @media (max-width:640px){
     dl.ledger > div{grid-template-columns:1fr;gap:.4rem;padding:1.15rem 0;}
@@ -175,6 +191,7 @@
     .js .reveal{opacity:1;transform:none;}
     .reveal.in{transition:none;}
     a{transition:none;}
+    .type-cursor{animation:none;}
     *{scroll-behavior:auto;}
   }
 </style>
@@ -189,7 +206,9 @@
     <section class="hero">
       <p class="eyebrow reveal in">Accessibility &middot; Cybersecurity &middot; Privacy</p>
       <div class="lower">
-        <h1 class="reveal in d1">jourcode</h1>
+        <h1 class="reveal in d1 type-logo" data-type-text="jourcode">
+          <span class="type-static">jourcode</span><span class="type-live" aria-hidden="true"></span><span class="type-cursor" aria-hidden="true"></span>
+        </h1>
         <p class="lede reveal in d2">A public space for accessibility, cybersecurity, and privacy work people can trust.</p>
       </div>
     </section>
@@ -233,6 +252,21 @@
 
 <script>
   (function(){
+    var logo = document.querySelector('.type-logo');
+    var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(logo && !reducedMotion){
+      var live = logo.querySelector('.type-live');
+      var text = logo.getAttribute('data-type-text') || '';
+      var index = 0;
+      logo.classList.add('is-typing');
+      live.textContent = '';
+      window.setTimeout(function typeNext(){
+        live.textContent = text.slice(0, index);
+        index += 1;
+        if(index <= text.length + 1){ window.setTimeout(typeNext, 95); }
+      }, 260);
+    }
+
     var els = document.querySelectorAll('.reveal:not(.in)');
     if(!('IntersectionObserver' in window)){
       els.forEach(function(el){el.classList.add('in');});
