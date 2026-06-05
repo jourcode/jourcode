@@ -3,8 +3,8 @@
     --paper-2:#080808;
     --ink:#fff;
     --ink-soft:rgba(255,255,255,.68);
-    --line:rgba(255,255,255,.16);
-    --line-2:rgba(255,255,255,.32);
+    --line:rgba(255,255,255,.11);
+    --line-2:rgba(255,255,255,.22);
     --accent:#fff;
     --accent-deep:rgba(255,255,255,.82);
     --serif:Georgia,"Times New Roman",serif;
@@ -117,7 +117,13 @@
     line-height:1.2;
     letter-spacing:.26em;text-transform:uppercase;color:var(--ink-soft);
   }
-  .label::after{content:"";flex:1;height:1px;background:var(--line);align-self:center;}
+  .label::after{
+    content:"";
+    flex:1;
+    height:1px;
+    align-self:center;
+    background:linear-gradient(90deg,var(--line-2),rgba(255,255,255,0));
+  }
 
   .statement{
     font-weight:400;
