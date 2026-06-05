@@ -4,10 +4,9 @@ Public portfolio in accessibility and cybersecurity.
 
 ## Focus
 
-- Accessibility as a security baseline.
-- Cybersecurity foundations, ethical hacking practice, and safer technical learning.
-- Tools and writing that make complex systems easier to use.
-
+- Implementing cybersecurity fundamentals.
+- Building accessible web infrastructure.
+- Secure and accessible web design.
 ## Site
 
 <https://jourcode.com>
