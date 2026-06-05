@@ -1,0 +1,4 @@
+Contact: mailto:contact@jourcode.com
+Expires: 2027-06-05T23:59:59Z
+Preferred-Languages: en
+Canonical: https://jourcode.com/.well-known/security.txt

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; frame-src 'none'">
+    <title>JourCode | Build. Protect. Explore.</title>
+    <meta name="description" content="JourCode is a cyber accessibility playground built for exploration, learning, and play.">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <nav class="skip-nav" aria-label="Skip links">
+      <a class="skip-link" href="#main">Skip to main content</a>
+    </nav>
+
+    <header class="site-header">
+      <a class="brand-mark" href="index.html" aria-label="JourCode home">
+        <span aria-hidden="true">JC</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#signal">Lab</a>
+        <a href="#systems">Systems</a>
+        <a href="#play">Play</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="signal" class="hero" aria-labelledby="hero-title">
+        <div class="signal-field" aria-hidden="true">
+          <span class="orb orb-one"></span>
+          <span class="orb orb-two"></span>
+          <span class="orb orb-three"></span>
+          <span class="cursor-light"></span>
+        </div>
+
+        <div class="hero-copy">
+          <h1 id="hero-title">Build. Protect.<br>Explore.</h1>
+          <p>JourCode is my public technical space for accessibility, cybersecurity, privacy, and secure systems design.</p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="primary-action" href="#play">Enter the Lab</a>
+            <a class="ghost-action" href="#systems">Explore Systems</a>
+            <button type="button" id="open-puzzle" class="ghost-button">Open Puzzle Vault</button>
+          </div>
+        </div>
+
+        <aside class="terminal-card" aria-label="JourCode status panel">
+          <div class="terminal-bar" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <p class="console-line"><span>visitor@jourcode</span> ~ % whoami</p>
+          <div class="terminal-output">
+            <p>Building secure systems.</p>
+            <p>Designing accessible experiences.</p>
+            <p>Solving puzzles. Shaping signal.</p>
+          </div>
+          <ul class="signal-list">
+            <li><strong>Status:</strong> online</li>
+            <li><strong>Access:</strong> visible</li>
+            <li><strong>Motion:</strong> tunable</li>
+            <li><strong>Play:</strong> unlocked</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section id="systems" class="section-panel" aria-labelledby="systems-title">
+        <div class="section-heading">
+          <h2 id="systems-title">Systems</h2>
+          <p>Focused. Usable. Alive.</p>
+        </div>
+
+        <div class="rule-grid">
+          <article class="rule-card">
+            <h3>Secure Systems</h3>
+            <p>Hardened by default. Privacy respected.</p>
+          </article>
+          <article class="rule-card">
+            <h3>Accessible By Design</h3>
+            <p>Built for everyone. Usable by all.</p>
+          </article>
+          <article class="rule-card">
+            <h3>Interactive Playground</h3>
+            <p>Puzzles, tools, and mini-challenges.</p>
+          </article>
+          <article class="rule-card">
+            <h3>Code-Native Experience</h3>
+            <p>Built for developers and explorers.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="play" class="play-lab" aria-labelledby="play-title">
+        <div class="section-heading">
+          <h2 id="play-title">Find The Signal</h2>
+          <p>Follow the colors. Unlock the board.</p>
+        </div>
+
+        <div class="puzzle-shell">
+          <div class="glyph-board" aria-label="Color sequence controls">
+            <button type="button" class="glyph-button" data-glyph="teal">
+              <span aria-hidden="true"></span>
+              Teal
+            </button>
+            <button type="button" class="glyph-button" data-glyph="blue">
+              <span aria-hidden="true"></span>
+              Blue
+            </button>
+            <button type="button" class="glyph-button" data-glyph="green">
+              <span aria-hidden="true"></span>
+              Green
+            </button>
+            <button type="button" class="glyph-button" data-glyph="violet">
+              <span aria-hidden="true"></span>
+              Violet
+            </button>
+          </div>
+
+          <div class="puzzle-console" aria-live="polite">
+            <p class="console-line"><span>hint</span> follow the palette from left to right, then down</p>
+            <p id="sequence-status">Choose a color to begin.</p>
+            <div class="puzzle-actions">
+              <button type="button" id="reset-sequence" class="ghost-button">Reset</button>
+              <button type="button" id="reveal-hint" class="ghost-button">Reveal a hint</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="interaction-grid" aria-label="More local interactions">
+          <article class="mini-tool" aria-labelledby="command-title">
+            <h3 id="command-title">Signal Board</h3>
+            <p>Light each path.</p>
+            <div class="command-buttons">
+              <button type="button" class="chip-button" data-command="access" aria-pressed="false">Access</button>
+              <button type="button" class="chip-button" data-command="privacy" aria-pressed="false">Privacy</button>
+              <button type="button" class="chip-button" data-command="motion" aria-pressed="false">Motion</button>
+              <button type="button" class="chip-button" data-command="code" aria-pressed="false">Code</button>
+            </div>
+            <p id="command-output" class="tool-output" aria-live="polite">Pick a path.</p>
+            <div class="progress-dots" aria-label="Command deck progress">
+              <span data-command-dot="access" aria-hidden="true"></span>
+              <span data-command-dot="privacy" aria-hidden="true"></span>
+              <span data-command-dot="motion" aria-hidden="true"></span>
+              <span data-command-dot="code" aria-hidden="true"></span>
+            </div>
+          </article>
+
+          <article class="mini-tool" aria-labelledby="controls-title">
+            <h3 id="controls-title">Field Controls</h3>
+            <p>Tune the interface.</p>
+            <div class="command-buttons">
+              <button type="button" id="toggle-glow" class="chip-button" aria-pressed="false">Soft Glow</button>
+              <button type="button" id="toggle-grid" class="chip-button" aria-pressed="false">Grid Pulse</button>
+              <button type="button" id="cycle-palette" class="chip-button">Shift palette</button>
+            </div>
+            <p id="control-status" class="tool-output" aria-live="polite">Choose a control.</p>
+          </article>
+        </div>
+
+        <div class="meta-grid" aria-label="Meta puzzle challenges">
+          <article class="challenge-card" aria-labelledby="console-title">
+            <h3 id="console-title">Console</h3>
+            <p>Type commands. Build rank.</p>
+            <div class="console-input-row">
+              <label class="sr-only" for="console-input">Console command</label>
+              <input id="console-input" type="text" autocomplete="off" spellcheck="false" placeholder="try: help">
+              <button type="button" id="run-console-command" class="chip-button">Run</button>
+            </div>
+            <pre id="console-output" class="console-log" aria-live="polite">visitor@jourcode ~ % help</pre>
+          </article>
+
+          <article class="challenge-card" aria-labelledby="trace-title">
+            <h3 id="trace-title">Trace Route</h3>
+            <p>Clue: center, north, east, south.</p>
+            <div class="trace-grid" aria-label="Trace route nodes">
+              <button type="button" class="trace-node" data-trace="NW" aria-label="Trace node northwest">NW</button>
+              <button type="button" class="trace-node" data-trace="N" aria-label="Trace node north">N</button>
+              <button type="button" class="trace-node" data-trace="NE" aria-label="Trace node northeast">NE</button>
+              <button type="button" class="trace-node" data-trace="W" aria-label="Trace node west">W</button>
+              <button type="button" class="trace-node" data-trace="C" aria-label="Trace node center">C</button>
+              <button type="button" class="trace-node" data-trace="E" aria-label="Trace node east">E</button>
+              <button type="button" class="trace-node" data-trace="SW" aria-label="Trace node southwest">SW</button>
+              <button type="button" class="trace-node" data-trace="S" aria-label="Trace node south">S</button>
+              <button type="button" class="trace-node" data-trace="SE" aria-label="Trace node southeast">SE</button>
+            </div>
+            <p id="trace-status" class="tool-output" aria-live="polite">Trace waiting.</p>
+          </article>
+
+          <article class="challenge-card" aria-labelledby="cipher-title">
+            <h3 id="cipher-title">Current Clue</h3>
+            <p class="cipher-line">53 49 47 4E 41 4C</p>
+            <button type="button" id="decode-clue" class="ghost-button">Decrypt Clue</button>
+            <p id="cipher-status" class="tool-output" aria-live="polite">Waiting for signal.</p>
+          </article>
+
+          <article class="challenge-card" aria-labelledby="core-title">
+            <h3 id="core-title">Meta Core</h3>
+            <p id="core-status" aria-live="polite">Core locked. Solve 0 of 4.</p>
+            <ul class="core-list" aria-label="Meta core requirements">
+              <li data-core-step="sequence">Color signal</li>
+              <li data-core-step="board">Signal board</li>
+              <li data-core-step="trace">Trace route</li>
+              <li data-core-step="cipher">Cipher clue</li>
+            </ul>
+          </article>
+        </div>
+
+        <section id="vault" class="vault-panel" aria-labelledby="vault-title" tabindex="-1" hidden>
+          <h3 id="vault-title">Signal Found</h3>
+          <p>More controls are live.</p>
+        </section>
+
+        <section id="core" class="vault-panel core-unlock" aria-labelledby="core-unlock-title" tabindex="-1" hidden>
+          <h3 id="core-unlock-title">Signal Core Online</h3>
+          <p>Meta path complete. Rank: Explorer.</p>
+        </section>
+      </section>
+
+      <section id="contact" class="section-panel contact-panel" aria-labelledby="contact-title">
+        <div>
+          <h2 id="contact-title">Contact</h2>
+          <p>
+            Build with me:
+            <a href="mailto:contact@jourcode.com">contact@jourcode.com</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p><span>visitor@jourcode</span> ~ % let's build what people can use.</p>
+    </footer>
+  </body>
+</html>
