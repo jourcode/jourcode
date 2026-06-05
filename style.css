@@ -110,8 +110,8 @@
   section.ethos{padding-top:clamp(2rem,5vh,4rem);}
   .hero .lower,
   section.block{
-    width:min(100%,46rem);
-    margin-left:auto;
+    width:min(100%,58rem);
+    margin-left:clamp(0rem,7vw,5rem);
     margin-right:auto;
   }
   .label{
@@ -136,7 +136,7 @@
   .statement{
     font-weight:400;
     font-size:clamp(1.75rem,1rem + 3.6vw,3.3rem);
-    line-height:1.18;letter-spacing:-.01em;max-width:26ch;margin:0;
+    line-height:1.18;letter-spacing:-.01em;max-width:31ch;margin:0;
   }
   .statement em{font-style:italic;color:var(--accent-deep);}
   .quote{
@@ -180,7 +180,7 @@
     font-family:var(--serif);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
     color:var(--ink-soft);padding-top:.35em;
   }
-  dl.ledger dd{margin:0;font-size:clamp(1.1rem,1rem + .4vw,1.3rem);line-height:1.45;max-width:50ch;}
+  dl.ledger dd{margin:0;font-size:clamp(1.1rem,1rem + .4vw,1.3rem);line-height:1.45;max-width:54ch;}
 
   .direction p{font-size:clamp(1.2rem,1rem + .9vw,1.55rem);line-height:1.5;max-width:42ch;margin:0;}
 
