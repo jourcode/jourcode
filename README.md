@@ -1,6 +1,6 @@
 # jourcode
 
-Public technical space for accessibility and cybersecurity practice.
+Public portfolio in accessibility and cybersecurity practice.
 
 ## Focus
 
