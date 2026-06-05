@@ -132,6 +132,20 @@
     line-height:1.18;letter-spacing:-.01em;max-width:26ch;margin:0;
   }
   .statement em{font-style:italic;color:var(--accent-deep);}
+  .quote{
+    border-left:1px solid var(--ink-soft);
+    padding-left:clamp(1rem,3vw,1.8rem);
+  }
+  .quote p{margin:0;}
+  .quote cite{
+    display:block;
+    margin-top:1rem;
+    font-family:var(--serif);
+    font-size:clamp(1rem,.9rem + .5vw,1.25rem);
+    font-style:normal;
+    color:var(--ink-soft);
+  }
+  .quote cite::before{content:"- ";}
 
   /* ledger */
   dl.ledger{margin:0;border-top:0;}
