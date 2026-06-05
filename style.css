@@ -133,8 +133,20 @@
   }
   .statement em{font-style:italic;color:var(--accent-deep);}
   .quote{
-    border-left:1px solid var(--ink-soft);
+    position:relative;
+    color:rgba(255,255,255,.78);
+    border-left:1px solid rgba(255,255,255,.38);
     padding-left:clamp(1rem,3vw,1.8rem);
+  }
+  .quote::before{
+    content:"\201C";
+    position:absolute;
+    left:clamp(-.35rem,-1vw,-.15rem);
+    top:-.45rem;
+    font-size:clamp(3.5rem,7vw,6rem);
+    line-height:1;
+    color:rgba(255,255,255,.16);
+    pointer-events:none;
   }
   .quote p{margin:0;}
   .quote cite{
