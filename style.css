@@ -1,12 +1,12 @@
 :root{
     --paper:#000;
     --paper-2:#080808;
-    --ink:#fff;
-    --ink-soft:rgba(255,255,255,.68);
+    --ink:rgba(255,255,255,.88);
+    --ink-soft:rgba(255,255,255,.58);
     --line:rgba(255,255,255,.07);
     --line-2:rgba(255,255,255,.16);
-    --accent:#fff;
-    --accent-deep:rgba(255,255,255,.82);
+    --accent:rgba(255,255,255,.9);
+    --accent-deep:rgba(255,255,255,.72);
     --serif:Georgia,"Times New Roman",serif;
     --mono:ui-monospace,"SFMono-Regular",Menlo,Monaco,Consolas,monospace;
     --pad:clamp(1.4rem,5vw,4.5rem);
