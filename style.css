@@ -72,7 +72,6 @@
     font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
     color:var(--ink-soft);
   }
-  .eyebrow-compact{display:none;}
 
   /* hero */
   .hero{
@@ -182,13 +181,11 @@
       --gap:clamp(3.25rem,9vh,5rem);
     }
     .eyebrow{
-      font-size:.72rem;
-      letter-spacing:.12em;
+      font-size:clamp(.56rem,2.75vw,.72rem);
+      letter-spacing:.045em;
       line-height:1.35;
       white-space:nowrap;
     }
-    .eyebrow-full{display:none;}
-    .eyebrow-compact{display:inline;}
     .hero{
       min-height:auto;
       padding-top:clamp(1.15rem,5vw,1.8rem);
