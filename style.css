@@ -118,6 +118,7 @@
     letter-spacing:.26em;text-transform:uppercase;color:var(--ink-soft);
   }
   .label::after{
+    content:none;
     display:none;
   }
 
@@ -134,9 +135,11 @@
     display:grid;grid-template-columns:minmax(8rem,13rem) 1fr;
     gap:1rem 2.5rem;
     padding:1.2rem 0;
+    border-top:0;
+    border-bottom:0;
   }
   dl.ledger > div + div{
-    border-top:1px solid var(--line);
+    border-top:0;
   }
   dl.ledger dt{
     font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
