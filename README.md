@@ -1,4 +1,4 @@
-# JourCode
+# jourcode
 
 I work where accessibility and cybersecurity meet, with a current focus on
 accessible security operations.
