@@ -15,13 +15,4 @@ recover, and stay safe, then look for ways those systems fail real users.
   speed, or perfect memory.
 - Privacy-preserving support paths that do not turn help into exposure.
 
-## Working Standard
-
-A secure flow is not finished until a real person can complete the secure action
-without losing privacy, autonomy, memory support, or protection.
-
-This is not softer security. It is security that still works when the user
-cannot rely on perfect memory, speed, vision, hearing, movement, device access,
-or private support.
-
 Visit [jourcode.com](https://jourcode.com).
