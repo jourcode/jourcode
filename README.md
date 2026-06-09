@@ -1,18 +1,32 @@
 # jourcode
 
-I work where accessibility and cybersecurity meet, with a current focus on
-accessible security operations.
+Accessible security operations at the intersection of accessibility,
+cybersecurity, and privacy.
 
-Security should protect people without taking away their access, privacy, or
-autonomy. I study the moments where security asks people to remember, verify,
-recover, and stay safe, then look for ways those systems fail real users.
+I focus on security systems people have to complete under real conditions:
+sign-in, MFA, account recovery, permissions, alerts, dashboards, incident
+reporting, and security training.
 
-## Current Direction
+## Role Focus
 
-- Identity and recovery flows that still work under real human conditions.
-- Security tools that work with assistive technology.
-- Alerts and dashboards that make evidence clear without relying on color,
-  speed, or perfect memory.
-- Privacy-preserving support paths that do not turn help into exposure.
+I am building toward accessibility cybersecurity work: auditing and explaining
+security controls so they preserve access, privacy, autonomy, and recovery
+instead of creating lockouts or unsafe workarounds.
+
+## Current Work
+
+- Reviewing identity, MFA, and recovery flows for lockout risk, helper exposure,
+  bypass pressure, and assistive-technology barriers.
+- Studying cybersecurity foundations, risk, IAM, incident response, and
+  accessible web testing.
+- Turning course work into privacy-safe audit notes, risk matrices, checklists,
+  and retest evidence.
+- Writing about security tools that remain usable with screen readers, keyboard
+  navigation, cognitive support, and plain-language evidence.
+
+## Public Proof Surface
+
+JourCode is where I collect the visible pieces of that path: notes, small
+projects, audits, and writing that connect security practice with access.
 
 Visit [jourcode.com](https://jourcode.com).
